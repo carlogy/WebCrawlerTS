@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.printReport = void 0;
+exports.sortPages = exports.printReport = void 0;
 const printReport = (pages) => {
     let reportPages = [];
     try {
@@ -23,3 +23,4 @@ const sortPages = (pages) => {
     }
     return pagesArray;
 };
+exports.sortPages = sortPages;

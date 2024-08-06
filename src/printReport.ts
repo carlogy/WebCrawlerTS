@@ -25,4 +25,4 @@ const sortPages = (pages: PageCount): [string, number][] => {
   return pagesArray;
 };
 
-export { printReport };
+export { printReport, sortPages };

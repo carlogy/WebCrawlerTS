@@ -1,6 +1,7 @@
 import { argv } from "node:process";
 import { crawlPage } from "./crawl";
 import { printReport } from "./printReport";
+import { writeToCSV } from "./writeToCSV";
 
 async function main(): Promise<void> {
   if (argv.length > 3) {
@@ -22,7 +23,8 @@ async function main(): Promise<void> {
     console.log(`Starting crawling on the page ${baseURL}`);
 
     const totalPages = await crawlPage(baseURL);
-    printReport(totalPages);
+    //if just want to print results to the console : printReport(totalPages);
+    writeToCSV(totalPages, baseURL);
   } catch (error) {
     console.log(error.message);
   }
