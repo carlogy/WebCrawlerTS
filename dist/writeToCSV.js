@@ -16,13 +16,13 @@ const writeToCSV = (pages, domain) => {
     catch (error) {
         console.log(`\x1b[31mRan into an error attempting to sort the results\n${error.message}\x1b[0m`);
     }
-    const results = [];
+    // const results: string[] = [];
+    let results;
     if (sortedPages.length > 0) {
-        results.push(...buildResults(sortedPages));
+        results = buildResults(sortedPages);
     }
     try {
-        // To Do complete writing file
-        fs_1.default.writeFile(`./results/${domainResult}.csv`, results.toLocaleString(), (error) => {
+        fs_1.default.writeFile(`./results/${domainResult}.csv`, results, (error) => {
             if (error) {
                 console.log(error.message);
             }
@@ -36,9 +36,10 @@ const writeToCSV = (pages, domain) => {
 };
 exports.writeToCSV = writeToCSV;
 const buildResults = (sortedPages) => {
-    const results = ["URL, Total\n"];
+    // const results: string[] = ["URL, Total\n"];
+    let resultString = "URL,Total\n";
     sortedPages.forEach((line) => {
-        results.push(`${line[0]},${line[1]}\n`);
+        resultString += `${line[0]},${line[1]}\n`;
     });
-    return results;
+    return resultString;
 };
