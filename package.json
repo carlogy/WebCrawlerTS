@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "dev": "tsc-watch --onsuccess \"node ./dist/main.js https://google.com\""
+    "dev": "tsc-watch --onsuccess \"node ./dist/main.js https://google.com\"",
+    "start": "node ./dist/main.js $1"
   },
   "jest": {
     "roots": [
