@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.main = main;
 const node_process_1 = require("node:process");
 const crawl_1 = require("./crawl");
+// import { printReport } from "./printReport";
 const writeToCSV_1 = require("./writeToCSV");
 async function main() {
     if (node_process_1.argv.length > 3) {

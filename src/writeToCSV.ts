@@ -2,6 +2,7 @@ import fs from "fs";
 
 import { PageCount } from "./crawl";
 import { sortPages } from "./printReport";
+import resultsGenerator from "./generator";
 
 const writeToCSV = (pages: PageCount, domain: string): string => {
   console.log("Writing to .csv file ⏳");
